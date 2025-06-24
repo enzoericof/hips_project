@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HIPS Web Console</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div style="text-align: right;">
+        <a href="/terminal">>_ Terminal</a>
+    </div>
+    <h1>🛡️ HIPS Web Console</h1>
+    <p><a href="/logout">Cerrar sesión</a></p>
+
+    <h2>⚙️ Módulos disponibles</h2>
+    <form method="post" action="/run">
+        <button name="modulo" value="binaries">🔧 Binarios críticos</button>
+        <button name="modulo" value="users">👤 Usuarios</button>
+        <button name="modulo" value="sniffer">🕵 Sniffers</button>
+        <button name="modulo" value="logs">📄 Analizar logs</button> 
+        <button name="modulo" value="mails">📥 Verificar Cola de Mails</button> 
+        <button name="modulo" value="memory">🔍 Monitor de RAM</button>
+        <button name="modulo" value="tmp">🧼 Escaneo de /tmp</button>
+        <button name="modulo" value="ddos">🌐 DDoS</button>
+        <button name="modulo" value="cron">📅 Tareas cron</button>
+        <button name="modulo" value="access">🔐 Accesos inválidos</button>
+	<button name="modulo" value="fullscan">🚀 Escaneo Completo</button>
+    </form>
+
+
+    {% if resultado %}
+        <h2> Resultado</h2>
+        <pre>{{ resultado }}</pre>
+    {% endif %}
+
+    <h2> Últimas Alarmas</h2>
+    <a href="/download/alarmas"><button>⬇ Descargar alarmas.log</button></a>
+    <pre>{{ alertas|join('') }}</pre>
+    <h2> Acciones de Prevención</h2>
+    <a href="/download/prevencion"><button>⬇️ Descargar prevencion.log</button></a>
+    <pre>{{ prevencion|join('') }}</pre>
+</body>
+</html>

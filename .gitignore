@@ -1,0 +1,14 @@
+*.pyc
+__pycache__/
+*.log
+*.db
+*.sqlite
+pgpass
+.venv/
+.env
+config/
+config/*.txt
+config/*.json
+*.bak
+*.old
+

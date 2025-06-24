@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HIPS - Terminal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div style="text-align: right;">
+        <a href="/">← Volver</a>
+    </div>
+
+    <h1>💻 Terminal remota (modo seguro)</h1>
+
+    <form method="post">
+        <input type="text" name="comando" value="{{ comando }}" style="width: 80%;">
+        <button type="submit">Ejecutar</button>
+    </form>
+
+    <h2>📤 Salida:</h2>
+    <pre>{{ salida }}</pre>
+</body>
+</html>

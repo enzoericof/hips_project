@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>HIPS - Ingreso</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            font-family: monospace;
+            color: #00FF00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background-color: #111;
+            padding: 30px;
+            border: 2px solid #00FF00;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00FF00;
+            width: 300px;
+        }
+        input {
+            background-color: #000;
+            border: 1px solid #00FF00;
+            color: #00FF00;
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        button {
+            background-color: #000;
+            color: #00FF00;
+            border: 1px solid #00FF00;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #00FF00;
+            color: #000;
+        }
+        h2 {
+            text-align: center;
+            color: #00FF00;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>🔐 Acceso al sistema HIPS</h2>
+        <form method="post">
+            <input type="text" name="usuario" placeholder="Usuario" required><br>
+            <input type="password" name="clave" placeholder="Contraseña" required><br>
+            <button type="submit">Ingresar</button>
+        </form>
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
